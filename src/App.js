@@ -54,8 +54,8 @@ const finalSearch = (e) => {
         
         <div className='containerTwo'>
         {
-              myRecipes.map(element => (
-                <Recipe label={element.recipe.label} image={element.recipe.image} calories={element.recipe.calories}
+              myRecipes.map((element,index) => (
+                <Recipe key={index} label={element.recipe.label} image={element.recipe.image} calories={element.recipe.calories}
                 ingredients={element.recipe.ingredientLines}/>
               ))
             }
