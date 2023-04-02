@@ -32,7 +32,7 @@ export default function Recipe({label,image,calories,ingredients}){
     return (
         
  
-        <div style={{ margin: 10 }}>
+      <div style={{ margin: 10 }}>
         <h1 className='label'>
             {label} </h1>
         <Card raised={true} sx={{ maxWidth: 1500 }}>
@@ -46,12 +46,7 @@ export default function Recipe({label,image,calories,ingredients}){
                 
             </CardContent>
             <CardActions >
-                
-
-                <Button variant="contained" 
-                        color="inherit"
-                        >
-                    Ingredients
+                    <h2 className='ingrd'>Ingredients</h2>
                     <ExpandMore
                         expand={expanded}
                         onClick={handleExpandClick}
@@ -60,18 +55,17 @@ export default function Recipe({label,image,calories,ingredients}){
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
-                </Button>
+                
             </CardActions>
             <Collapse in={expanded} timeout="auto" 
                         unmountOnExit>
                 <CardContent>
-                    <Typography paragraph>
-                    <ul className="list">
-            {ingredients.map(ingredient => (
-                <li className="icon">{ingredient}</li>
+                    
+                    
+            {ingredients.map((ingredient,index) => (
+                <Typography key={index}>{ingredient} </Typography>
             ))}
-        </ul>
-                    </Typography>
+                   
 
                 </CardContent>
             </Collapse>
