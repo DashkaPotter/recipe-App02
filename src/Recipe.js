@@ -46,7 +46,7 @@ export default function Recipe({label,image,calories,ingredients}){
                 
             </CardContent>
             <CardActions >
-                    <h2 className='ingrd'>Ingredients</h2>
+                    <h2>Ingredients</h2>
                     <ExpandMore
                         expand={expanded}
                         onClick={handleExpandClick}
